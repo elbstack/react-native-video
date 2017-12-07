@@ -728,7 +728,13 @@ static NSString *const timedMetadata = @"timedMetadata";
 - (void)removePlayerLayer
 {
     [_playerLayer removeFromSuperlayer];
-    [_playerLayer removeObserver:self forKeyPath:readyForDisplayKeyPath];
+    if ([self observationInfo]) {
+        @try {
+          [_playerLayer removeObserver:self forKeyPath:readyForDisplayKeyPath];
+        }
+        @catch (NSException *exception) {}
+        
+    }
     _playerLayer = nil;
 }
 
