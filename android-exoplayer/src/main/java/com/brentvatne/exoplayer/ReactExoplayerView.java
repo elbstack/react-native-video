@@ -455,7 +455,7 @@ class ReactExoplayerView extends FrameLayout implements
     }
 
     @Override
-    public void onPositionDiscontinuity() {
+    public void onPositionDiscontinuity(int i) {
         if (playerNeedsSource) {
             // This will only occur if the user has performed a seek whilst in the error state. Update the
             // resume position so that if the user then retries, playback will resume from the position to
@@ -464,7 +464,6 @@ class ReactExoplayerView extends FrameLayout implements
         }
     }
 
-    @Override
     public void onTimelineChanged(Timeline timeline, Object manifest) {
         // Do nothing.
     }
@@ -636,5 +635,22 @@ class ReactExoplayerView extends FrameLayout implements
 
     public void setDisableFocus(boolean disableFocus) {
         this.disableFocus = disableFocus;
+    }
+
+    @Override
+    public void onSeekProcessed() {
+        // Do nothing.
+    }
+
+    public void onShuffleModeEnabledChanged(boolean b) {
+        // Do nothing.
+    }
+
+    public void onRepeatModeChanged(int i) {
+        // Do nothing.
+    }
+
+    public void onTimelineChanged(Timeline t, Object o, int i) {
+        // Do nothing.
     }
 }
