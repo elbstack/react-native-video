@@ -848,10 +848,11 @@ static NSString *const timedMetadata = @"timedMetadata";
 {
     [_playerLayer removeFromSuperlayer];
     if (_playerLayerObserverSet) {
-      try {
+      @try {
         [_playerLayer removeObserver:self forKeyPath:readyForDisplayKeyPath];
         _playerLayerObserverSet = NO;
-      catch (NSException *exception) {}
+      }
+      @catch (NSException *exception) {}
     }
     _playerLayer = nil;
 }
