@@ -860,21 +860,4 @@ class ReactExoplayerView extends FrameLayout implements
     public void setUseTextureView(boolean useTextureView) {
         exoPlayerView.setUseTextureView(useTextureView);
     }
-
-    @Override
-        public void onSeekProcessed() {
-            // Do nothing.
-        }
-
-        public void onShuffleModeEnabledChanged(boolean b) {
-            // Do nothing.
-        }
-
-        public void onRepeatModeChanged(int i) {
-            // Do nothing.
-        }
-
-        public void onTimelineChanged(Timeline t, Object o, int i) {
-            // Do nothing.
-        }
 }

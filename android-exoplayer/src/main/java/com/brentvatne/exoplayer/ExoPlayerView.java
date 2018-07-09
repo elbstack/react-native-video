@@ -215,11 +215,6 @@ public final class ExoPlayerView extends FrameLayout {
             shutterView.setVisibility(INVISIBLE);
         }
 
-        @Override
-        public void onSeekProcessed() {
-            // Do nothing.
-        }
-
         // ExoPlayer.EventListener implementation
 
         @Override
@@ -268,18 +263,6 @@ public final class ExoPlayerView extends FrameLayout {
 
         @Override
         public void onRepeatModeChanged(int repeatMode) {
-            // Do nothing.
-        }
-
-        public void onShuffleModeEnabledChanged(boolean b) {
-            // Do nothing.
-        }
-
-        public void onRepeatModeChanged(int i) {
-            // Do nothing.
-        }
-
-        public void onTimelineChanged(Timeline t, Object o, int i) {
             // Do nothing.
         }
     }
