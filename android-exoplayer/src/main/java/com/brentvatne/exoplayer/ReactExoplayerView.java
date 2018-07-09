@@ -739,7 +739,8 @@ class ReactExoplayerView extends FrameLayout implements
         if (TextUtils.isEmpty(type)) {
             // Do nothing
         } else if (type.equals("disabled")) {
-            trackSelector.setSelectionOverride(index, groups, null);
+            // elbstack-ce because build fails with newer exoplayer version and its probably not needed for WeBurn
+            // trackSelector.setSelectionOverride(index, groups, null);
             return;
         } else if (type.equals("language")) {
             for (int i = 0; i < groups.length; ++i) {
@@ -760,19 +761,23 @@ class ReactExoplayerView extends FrameLayout implements
         } else if (type.equals("index")) {
             trackIndex = value.asInt();
         } else { // default. invalid type or "system"
-            trackSelector.clearSelectionOverrides(index);
+            // elbstack-ce because build fails with newer exoplayer version and its probably not needed for WeBurn
+            // trackSelector.clearSelectionOverrides(index);
             return;
         }
 
         if (trackIndex == C.INDEX_UNSET) {
-            trackSelector.clearSelectionOverrides(trackIndex);
+            // elbstack-ce because build fails with newer exoplayer version and its probably not needed for WeBurn
+            // trackSelector.clearSelectionOverrides(trackIndex);
             return;
         }
 
+        /* elbstack-ce because build fails with newer exoplayer version and its probably not needed for WeBurn
         MappingTrackSelector.SelectionOverride override
                 = new MappingTrackSelector.SelectionOverride(
                         new FixedTrackSelection.Factory(), trackIndex, 0);
         trackSelector.setSelectionOverride(index, groups, override);
+        */
     }
 
     public void setPausedModifier(boolean paused) {
